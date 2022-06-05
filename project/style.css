@@ -21,7 +21,7 @@ header {
     padding: 10px;
 }
 
-.actions {
+.actions .search {
     padding: 10px;
 }
 
@@ -50,4 +50,8 @@ button {
     flex-direction: column;
     gap: 10px;
     margin-top: 15px;
+}
+
+.goods-search {
+    height: 36px
 }
