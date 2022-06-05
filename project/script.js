@@ -9,15 +9,9 @@ const BASE_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-st
 const GET_GOODS_ITEMS = `${BASE_URL}catalogData.json`
 const GET_BASKET_GOODS_ITEMS = `${BASE_URL}getBasket.json`
 
-function service(url, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url);
-  xhr.send();
-  xhr.onload = () => {
-    if (xhr.readyState === 4) {
-      callback(JSON.parse(xhr.response))
-    }
-  }
+function service(url) {
+  return fetch(url)
+    .then((res) => res.json())
 }
 
 class GoodsItem {
@@ -38,11 +32,11 @@ class GoodsItem {
 class GoodsList {
   items = [];
   filteredItems = []
-  fetchGoods(callback) {
-    service(GET_GOODS_ITEMS, (data) => {
+  fetchGoods() {
+    return service(GET_GOODS_ITEMS).then((data) => {
       this.items = data;
       this.filteredItems = data;
-      callback()
+      return data;
     });
   }
   filterItems(value) {
@@ -75,7 +69,7 @@ class BasketGoodsList {
 }
 
 const goodsList = new GoodsList();
-goodsList.fetchGoods(() => {
+goodsList.fetchGoods().then(() => {
   goodsList.render();
 });
 
