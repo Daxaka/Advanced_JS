@@ -3,17 +3,25 @@
     margin: 0;
 }
 
-body {
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
     display: grid;
     grid-template-rows: max-content auto;
     gap: 40px;
+    position: relative;
 }
 
 header {
     height: 100px;
     display: grid;
-    grid-template-columns: auto max-content;
-    background-color: rgb(12, 59, 145);
+    grid-template-columns: auto max-content max-content;
+    background-color: black;
 }
 
 .title {
@@ -21,7 +29,8 @@ header {
     padding: 10px;
 }
 
-.actions .search {
+.actions,
+.search {
     padding: 10px;
 }
 
@@ -35,23 +44,58 @@ button {
     gap: 40px
 }
 
-.summ {
-    display: flex;
-    justify-content: flex-end;
-}
-
 .goods-item {
     width: 200px;
-    height: 90px;
+    height: 300px;
     padding: 10px;
     box-sizing: border-box;
     outline: 1px solid black;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 15px;
 }
 
 .goods-search {
     height: 36px
+}
+
+.fixed-area {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.basket-card {
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    display: grid;
+    grid-template-rows: max-content auto;
+}
+
+.basket-card__header {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto max-content;
+}
+
+.basket-card__header__title {
+    padding: 10px
+}
+
+.basket-card__header__delete-icon {
+    background-image: url("img/delete_icon.png");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.basket-card__content {
+    padding: 10px;
 }
