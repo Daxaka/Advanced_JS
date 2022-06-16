@@ -14,6 +14,13 @@ service(GET_BASKET_GOODS_ITEMS).then((data) => {
 
 
 function init() {
+
+  Vue.component('custom-search', {
+    template: `
+    <input type="text" class="goods-search" @input="$emit('input', $event.target.value)"/>
+    `
+  })
+
   const CustomButton = Vue.component('custom-button', {
     template: `
       <button class="search-button" type="button" v-on:click="$emit('click')">
@@ -61,7 +68,6 @@ function init() {
     el: '#root',
     data: {
       items: [],
-      filteredItems: [],
       search: '',
       cardIsVision: false
     },
@@ -74,18 +80,18 @@ function init() {
           this.items = data;
           this.filteredItems = data;
         });
-      },
-      filterItems() {
-        this.filteredItems = this.items.filter(({ product_name }) => {
-          return product_name.match(new RegExp(this.search, 'gui'))
-        })
-      },
+      }
     },
     computed: {
       calculatePrice() {
         return this.filteredItems.reduce((prev, { price }) => {
           return prev + price;
         }, 0)
+      },
+      filteredItems() {
+        return this.items.filter(({ product_name }) => {
+          return product_name.match(new RegExp(this.search, 'gui'))
+        })
       }
     },
     mounted() {

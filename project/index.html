@@ -14,8 +14,9 @@
       <header>
          <h1 class="title">eShop</h1>
          <div class="search">
-            <input type="text" class="goods-search" v-model="search" />
-            <custom-button v-on:click="filterItems">искать</custom-button>
+            <custom-search v-model="search"></custom-search>
+            <!--input type="text" class="goods-search" v-model="search" />-->
+            <!--custom-button v-on:click="filterItems">искать</custom-button>-->
          </div>
          <div class="actions">
             <custom-button v-on:click="setVisionCard">Корзина</custom-button>
