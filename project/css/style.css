@@ -1,0 +1,144 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+header {
+	display: flex;
+	justify-content: right;
+}
+
+.goods-search {
+	margin: 5px 20px;
+	padding: 5px 10px;
+	font-size: 30px;
+}
+
+.button-item {
+	position: absolute;
+	bottom: 14px;
+}
+
+.cart-button {
+	margin: 2px 20px;
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: bold;
+	background: rgb(31, 43, 58);
+	color: rgb(235, 249, 249);
+	border-radius: 4px;
+}
+
+.count {
+	display: flex;
+	width: 100%;
+}
+
+.cart-button:hover {
+	background: rgb(56, 72, 91);
+	color: rgb(235, 249, 249);
+}
+
+.cart-button:active {
+	background: rgb(121, 192, 54);
+	color: rgb(235, 249, 249);
+}
+
+.goods-list {
+	border: 3px solid rgb(97, 160, 236);
+	background: rgb(112, 146, 192);
+	box-sizing: border-box;
+	padding: 20px 100px;
+	margin: 0 20px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+	flex-wrap: wrap;
+}
+
+.goods-item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 3px solid rgb(98, 138, 187);
+	background: rgb(255, 255, 255);
+	max-width: 300px;
+	min-width: 214px;
+	min-height: 260px;
+	margin: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 6px;
+}
+
+.carts-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 3px solid rgb(181, 187, 98);
+	background: rgb(223, 230, 244);
+	max-width: 300px;
+	min-width: 214px;
+	margin: 10px;
+	padding: 5px 20px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	flex-wrap: wrap;
+}
+
+.img-tovar {
+	max-width: 160px;
+}
+
+.block-carts {
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	flex-wrap: wrap;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 310px;
+	height: 100vh;
+	background: rgb(117, 91, 91);
+	overflow: scroll;
+	box-sizing: border-box;
+}
+
+.carts-block {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	align-items: center;
+}
+
+.carts {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.bug {
+	padding: 5px 30px;
+	display: flex;
+	background: rgb(79, 91, 129);
+	border-radius: 5px;
+	margin-top: 50px;
+	font-size: 24px;
+	line-height: 40px;
+}
+
+.error {
+	padding: 5px 30px;
+	color: rgb(148, 243, 243);
+}
